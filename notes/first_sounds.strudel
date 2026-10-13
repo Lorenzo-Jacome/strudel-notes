@@ -1,0 +1,42 @@
+/* 
+----------------------------
+|    FIRST SOUNDS NOTES    |
+----------------------------
+*/
+
+//Main function to create a sound.
+//Put ":n" to change the sample number. Defaults to 0 if nothing gets placed.
+sound("casio")
+sound("metal:1")
+
+//DRUMS:
+/*
+bd = bass drum
+sd = snare drum
+rim = rimshot
+hh = hihat
+oh = open hihat
+lt = low tom
+mt = middle tom
+ht = high tom
+rd = ride cymbal
+cr = crash cymbal
+*/
+sound("bd hh sd oh")
+
+//You can change the BANK of sounds:
+sound("bd hh sd oh").bank("RolandTR909")
+
+// <...>
+// The sounds inside the brackets play ONCE PER CYCLE
+sound("<bd hh sd oh>")
+// When you multiply angle brackets, you no longer play a sound per cycle.
+// If you have *n, then you divide a cycle in n equal parts,
+// Then, the sounds from inside the brackets get played in order, one in each division
+sound("<bd hh sd oh>*8")
+
+//CYCLES PER MINUTE
+setcpm(90/4) //90 bpm
+
+// RESTS = "-"
+sound("bd hh - rim - bd hh rim")
